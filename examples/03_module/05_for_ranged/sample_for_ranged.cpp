@@ -39,3 +39,29 @@ void loop_vector_w_auto()
 		std::cout << n << "\n";
 	}
 }
+
+void loop_vector_with_index(std::vector<int> values) //pass by value
+{
+	for (int i = 0; i < values.size(); i++)
+	{
+		std::cout << values[i] << "\n";
+	}
+}
+
+void loop_vector(std::vector<int>& values) //pass by reference
+{
+	values[0] = 1000;
+	for (int i = 0; i < values.size(); i++)
+	{
+		std::cout << values[i] << "\n";
+	}
+}
+
+void loop_const_vector(const std::vector<int>& values)
+{
+	for (auto v : values)
+	{
+		std::cout << v << "\n";
+	}
+}
+
