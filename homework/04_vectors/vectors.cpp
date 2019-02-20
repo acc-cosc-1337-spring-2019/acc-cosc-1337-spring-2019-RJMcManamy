@@ -52,12 +52,15 @@ Example given number 10 returns a vector with elements 2,3,5,7,
 
 Make sure to use the is_prime function to determine if current 
 number is prime.
+
+I made this include the pass value because the assignment on the web version of the instructions says up to and including the number. 
+I didn't know whether to follow that or the instruction here so I simply included it.
 */
 vector<int> vector_of_primes(int number)
 {
 	vector<int> primes = {};
 
-	for (int i = 1; i < number; ++i)
+	for (int i = 2; i <= number; ++i)
 	{
 		if (is_prime(i))
 		{
