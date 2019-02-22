@@ -30,9 +30,9 @@ accepts a string parameter and returns a string reversed.
 string get_reverse_string(string dna)
 {
 	string reverse = "";
-	for (int i = dna.length() - 1; i >= 0; i--)
+	for (size_t i = (dna.length() - 1); i >= 0; i--)
 	{
-		reverse += dna[i];
+		reverse += "" + dna[i];
 	}
 	return reverse;
 }
