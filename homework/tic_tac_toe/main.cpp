@@ -1,7 +1,9 @@
 #include "tic_tac_toe.h"
+#include "tic_tac_toe_manager.h"
 
 int main() 
 {
+	TicTacToeManager manage;
 	int choice = 0;
 	do
 	{
@@ -17,7 +19,8 @@ int main()
 			board.display_board();
 			if (board.game_over() == true)
 			{
-				cout << "Winner";
+				cout << "Game Over";
+				break;
 			}
 			/*if (board.game_over() == true && board.get_player() == "X")
 			{
@@ -31,8 +34,10 @@ int main()
 			}*/
 			
 		}
+		manage.save_game(board);
 		cout << "\n" << "Press 1 to play again: ";
 		cin >> choice;
 	} while (choice == 1);
+	manage.display_history();
 	return 0;
 }
