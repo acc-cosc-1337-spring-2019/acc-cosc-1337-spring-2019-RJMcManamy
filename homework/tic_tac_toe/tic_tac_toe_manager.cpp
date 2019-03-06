@@ -6,8 +6,7 @@
 void TicTacToeManager::save_game(const TicTacToe game)
 {
 	games.push_back(game);
-	//std::string winnns = game.get_winner();
-	//update_winner_count(winnns);
+	update_winner_count(games.back().get_winner()); //used copy in the vector to get around const
 }
 
 void TicTacToeManager::display_history() const
@@ -29,7 +28,7 @@ void TicTacToeManager::update_winner_count(std::string winner)
 	{
 		o_win++;
 	}
-	else
+	else if(winner == "C")
 	{
 		ties++;
 	}

@@ -187,6 +187,7 @@ bool TicTacToe::game_over()
 {
 	if (check_column_win() == true || check_diagonal_win() == true || check_row_win() == true || check_board_full() == true)
 	{
+		set_winner();
 		return true;
 	}
 	else
