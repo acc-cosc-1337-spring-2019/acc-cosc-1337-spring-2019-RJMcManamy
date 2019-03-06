@@ -3,11 +3,11 @@
 
 //Write class function implementations here
 
-void TicTacToeManager::save_game(const TicTacToe game)
+void TicTacToeManager::save_game(TicTacToe game)
 {
+	std::string winnns = game.get_winner();
 	games.push_back(game);
-	//std::string winnns = game.get_winner();
-	//update_winner_count(winnns);
+	update_winner_count(winnns);
 }
 
 void TicTacToeManager::display_history() const

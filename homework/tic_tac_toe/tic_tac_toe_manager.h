@@ -11,7 +11,7 @@ using std::cout;
 class TicTacToeManager 
 {
 public:
-	void save_game(const TicTacToe game);
+	void save_game(TicTacToe game);
 	void display_history() const;
 
 private:
