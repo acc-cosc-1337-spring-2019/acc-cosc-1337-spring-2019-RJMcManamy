@@ -1,9 +1,14 @@
 #include "bank_account.h"
+#include "atm.h"
 #include <vector>
 #include <iostream>
 
 int main() 
 {
+	BankAccount account(123, 100);
+	ATM atm(account);
+	atm.display_balance();
+	/*
 	std::vector<BankAccount> accounts;
 
 	BankAccount account(12345689, 500);
@@ -16,6 +21,6 @@ int main()
 	{
 		std::cout << act.get_balance() << "\n";
 	}
-
+	*/
 	return 0;
 }
