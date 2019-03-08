@@ -178,7 +178,7 @@ void TicTacToe::set_winner()
 
 }
 
-std::string TicTacToe::get_winner()
+std::string TicTacToe::get_winner()const
 {
 	return winner;
 }
