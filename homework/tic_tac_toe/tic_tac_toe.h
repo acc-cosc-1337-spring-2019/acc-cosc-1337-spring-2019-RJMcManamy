@@ -13,7 +13,6 @@ public:
 	void start_game(std::string first_player);
 	bool game_over();
 	void mark_board(int position);
-	void display_board() const;
 	std::string get_player() const;
 	std::string get_winner() const;
 private:
@@ -28,6 +27,12 @@ private:
 	std::string winner;
 	void set_winner();
 
+
+	friend std::ostream& operator << (std::ostream &out, TicTacToe &tictactoe);
+	friend std::istream& operator << (std::istream &in, TicTacToe &tictactoe);
 };
 
+
+
 #endif
+

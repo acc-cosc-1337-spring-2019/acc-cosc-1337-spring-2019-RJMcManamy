@@ -12,7 +12,7 @@ class TicTacToeManager
 {
 public:
 	void save_game(const TicTacToe game);
-	void display_history() const;
+	friend std::ostream& operator << (std::ostream &out, TicTacToeManager &manager);
 
 private:
 	std::vector<TicTacToe> games;
