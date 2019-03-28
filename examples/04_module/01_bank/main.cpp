@@ -3,11 +3,11 @@
 #include <vector>
 #include <iostream>
 
-int main() 
-{
-	BankAccount account(123, 100);
-	ATM atm(account);
-	atm.display_balance();
+//int main() 
+//{
+	//BankAccount account(123, 100);
+	//ATM atm(account);
+	//atm.display_balance();
 	/*
 	std::vector<BankAccount> accounts;
 
@@ -22,5 +22,5 @@ int main()
 		std::cout << act.get_balance() << "\n";
 	}
 	*/
-	return 0;
-}
+	//return 0;
+//}

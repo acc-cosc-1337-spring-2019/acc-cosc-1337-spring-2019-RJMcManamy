@@ -1,3 +1,6 @@
+#ifndef BANK_ACCOUNT_H
+#define BANK_ACCOUNT_H
+
 class BankAccount 
 {
 public:
@@ -11,3 +14,5 @@ private:
 	double balance;
 	bool amount_greater_zero(double amount);
 };
+
+#endif 
