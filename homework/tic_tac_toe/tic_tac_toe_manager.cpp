@@ -6,7 +6,7 @@
 void TicTacToeManager::save_game(const TicTacToe game)
 {
 	games.push_back(game);
-	update_winner_count(game.get_winner());
+	update_winner_count(games.back().get_winner());
 }
 
 void TicTacToeManager::display_history() const
