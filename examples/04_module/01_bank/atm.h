@@ -1,17 +1,18 @@
-#include "bank_account.h"
+#include "customer.h"
 
 #ifndef ATM_H
 #define ATM_H
 
-class ATM
+class ATM 
 {
 public:
-	ATM() : account(1,5) {}
-	ATM(BankAccount a) : account(a) {}
+	ATM(Customer& c) : customer(c) {}
 	void display_balance();
-
+	void deposit(double amt);
+	void withdraw(double amt);
+	void display_transactions()const;
 private:
-	BankAccount account;
+	Customer& customer;
 };
 
 #endif // !ATM_H
