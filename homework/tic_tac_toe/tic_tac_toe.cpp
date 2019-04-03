@@ -10,13 +10,7 @@ void TicTacToe::start_game(std::string first_player)
 
 void TicTacToe::mark_board(int position)
 {
-	for (int p = 0; p < pegs.size(); p++)
-	{
-		if (p == (position - 1))
-		{
-			pegs[p] = get_player();
-		}
-	}
+	pegs[position-1] = get_player();
 	if (game_over() == false)
 	{
 		set_next_player();
