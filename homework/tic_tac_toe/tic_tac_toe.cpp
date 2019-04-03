@@ -30,90 +30,17 @@ std::string TicTacToe::get_player() const
 
 bool TicTacToe::check_column_win()
 {
-	if (pegs[0] == "X" && pegs[3] == "X" && pegs[6] == "X")
-	{
-		return true;
-	}
-	else if (pegs[0] == "O" && pegs[3] == "O" && pegs[6] == "O")
-	{
-		return true;
-	}
-	else if (pegs[1] == "X" && pegs[4] == "X" && pegs[7] == "X")
-	{
-		return true;
-	}
-	else if (pegs[1] == "O" && pegs[4] == "O" && pegs[7] == "O")
-	{
-		return true;
-	}
-	else if (pegs[2] == "X" && pegs[5] == "X" && pegs[8] == "X")
-	{
-		return true;
-	}
-	else if (pegs[2] == "O" && pegs[5] == "O" && pegs[8] == "O")
-	{
-		return true;
-	}
-	else
-	{
-		return false;
-	}
+	return false;
 }
 
 bool TicTacToe::check_row_win()
 {
-	if (pegs[0] == "X" && pegs[1] == "X" && pegs[2] == "X")
-	{
-		return true;
-	}
-	else if (pegs[0] == "O" && pegs[1] == "O" && pegs[2] == "O")
-	{
-		return true;
-	}
-	else if (pegs[3] == "X" && pegs[4] == "X" && pegs[5] == "X")
-	{
-		return true;
-	}
-	else if (pegs[3] == "O" && pegs[4] == "O" && pegs[5] == "O")
-	{
-		return true;
-	}
-	else if (pegs[6] == "X" && pegs[7] == "X" && pegs[8] == "X")
-	{
-		return true;
-	}
-	else if (pegs[6] == "O" && pegs[7] == "O" && pegs[8] == "O")
-	{
-		return true;
-	}
-	else
-	{
-		return false;
-	}
+	return false;
 }
 
 bool TicTacToe::check_diagonal_win()
 {
-	if (pegs[0] == "X" && pegs[4] == "X" && pegs[8] == "X")
-	{
-		return true;
-	}
-	else if (pegs[0] == "O" && pegs[4] == "O" && pegs[8] == "O")
-	{
-		return true;
-	}
-	else if (pegs[2] == "X" && pegs[4] == "X" && pegs[6] == "X")
-	{
-		return true;
-	}
-	else if (pegs[2] == "O" && pegs[4] == "O" && pegs[6] == "O")
-	{
-		return true;
-	}
-	else
-	{
-		return false;
-	}
+	return false;
 }
 
 void TicTacToe::clear_board()
@@ -190,18 +117,28 @@ std::ostream & operator<<(std::ostream & out, TicTacToe & tictactoe)
 	for (int p = 0; p < tictactoe.pegs.size(); p++)
 	{
 		out << tictactoe.pegs[p];
-		if (p == 2 || p == 5 || p == 8)
+		if (tictactoe.pegs.size() == 9)
 		{
-			cout << "\n";
+			if (p == 2 || p == 5 || p == 8)
+			{
+				cout << "\n";
+			}
+		}
+		else if (tictactoe.pegs.size() == 16)
+		{
+			if (p == 3 || p == 7 || p == 11 || p == 15)
+			{
+				cout << "\n";
+			}
 		}
 	}
 	return out;
 }
 
-std::istream & operator<<(std::istream & in, TicTacToe & tictactoe)
+std::istream & operator>>(std::istream & in, TicTacToe & tictactoe)
 {
 	int mark;
-	cout << "Enter a position of 1-9 for " << tictactoe.get_player() << " ";
+	cout << "Enter a position of 1-" << tictactoe.pegs.size() <<" for " << tictactoe.get_player() << " ";
 	cin >> mark;
 	tictactoe.mark_board(mark);
 	cout << "\n";
