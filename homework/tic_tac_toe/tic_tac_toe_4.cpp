@@ -91,7 +91,7 @@ bool TicTacToe4::check_diagonal_win()
 	{
 		return true;
 	}
-	else if (pegs[3] == "X" && pegs[6] == "X" && pegs[19] == "X" && pegs[12] == "X")
+	else if (pegs[3] == "X" && pegs[6] == "X" && pegs[9] == "X" && pegs[12] == "X")
 	{
 		return true;
 	}
