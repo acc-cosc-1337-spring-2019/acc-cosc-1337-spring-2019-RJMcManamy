@@ -22,21 +22,6 @@ std::string TicTacToe::get_player() const
 	return next_player;
 }
 
-bool TicTacToe::check_column_win()
-{
-	return false;
-}
-
-bool TicTacToe::check_row_win()
-{
-	return false;
-}
-
-bool TicTacToe::check_diagonal_win()
-{
-	return false;
-}
-
 void TicTacToe::clear_board()
 {
 	for (int p = 0; p < pegs.size(); p++)
