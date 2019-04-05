@@ -41,9 +41,10 @@ wxBoxSizer * Panel::get_box_sizer()
 
 	wxString trans_type_choices[]{ wxT("Deposit"), wxT("Withdraw") };
 
-	trans_type_radio = new wxRadioBox(this, -1, wxT("Trans Type")),
-		wxDefaultSize, 
-			WXSIZEOF(trans_type_choices), trans_type_choices, 1, wxRA_SPECIFY_COLS;
+	trans_type_radio = new wxRadioBox(this, -1, wxT("Trans Type"),
+		wxDefaultPosition, wxDefaultSize,
+		WXSIZEOF(trans_type_choices), trans_type_choices, 1,
+		wxRA_SPECIFY_COLS);
 	vbox1->Add(trans_type_radio, 0);
 
 	auto amount_label = new wxStaticText(this, wxID_ANY, wxT("Amount: "),
