@@ -15,7 +15,16 @@ int main()
 		cin >> size;
 
 		board = manager->get_game(size);
-			
+
+		while (board->game_over() == false)
+		{
+			cin >> *board;
+			cout << *board;
+			cout << "\n\n";
+		}
+
+		cout << "Winner: " << board->get_winner();
+
 		manager->save_game(std::move(board));
 		cout << "\n" << "Press 1 to play again: ";
 		cin >> choice;
