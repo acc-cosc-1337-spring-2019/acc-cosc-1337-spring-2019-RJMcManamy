@@ -16,6 +16,7 @@ public:
 	void mark_board(int position);
 	std::string get_player() const;
 	std::string get_winner() const;
+	//const std::vector<std::string>& get_pegs();
 
 protected:
 	std::vector<std::string> pegs{ 9, " " };
