@@ -78,6 +78,11 @@ std::string TicTacToe::get_winner()const
 	return winner;
 }
 
+const std::vector<std::string>& TicTacToe::get_pegs()
+{
+	return pegs;
+}
+
 bool TicTacToe::game_over()
 {
 	if (check_column_win() == true || check_diagonal_win() == true || check_row_win() == true || check_board_full() == true)
