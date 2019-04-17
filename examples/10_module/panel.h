@@ -16,7 +16,7 @@ private:
 	void OnDraw(wxCommandEvent& event);
 	void OnMouseDown(wxMouseEvent& event);
 	void OnMouseUp(wxMouseEvent& event);
-	void draw_shape(Point p, int width = 10, int height = 5, int radius = 25);
+	void draw_shape(Point p, int width = 50, int height = 30, int radius = 45);
 	wxTextCtrl* draw_text;
 	wxRadioBox* radio_box;
 	Point coord{0, 0};
