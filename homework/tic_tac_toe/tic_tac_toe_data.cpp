@@ -62,16 +62,16 @@ vector<unique_ptr<TicTacToe>> TicTacToeData::get_games()
 		{
 			game.push_back(std::string(1 ,ch));	
 		}
-		std::unique_ptr<TicTacToe> game1;
+		//std::unique_ptr<TicTacToe> game1;
 		if (line.size() == 9)
 		{
-			game1 = std::make_unique<TicTacToe3>();
+			//game1 = std::make_unique<TicTacToe3>();
 		}
 		else
 		{
-			game1 = std::make_unique<TicTacToe4>();
+			//game1 = std::make_unique<TicTacToe4>();
 		}
-		games.push_back(game1);
+		//games.push_back(game1);
 	}
 	file.close();
 
