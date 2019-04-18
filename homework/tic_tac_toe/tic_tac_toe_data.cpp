@@ -6,12 +6,19 @@
 Write the code to save a vector of string into a file.
 After writing all the vector strings add a new line character "\n" to file.
 Close the file.
-Use the fstream object and file_name(class variable). Open the file for
+Use the fstream object and file_name(class variable). Open the file_name for
 writing and append.
 */
 void TicTacToeData::save_game(const vector<string>& pegs)
 {
+	fstream saved_games(file_name, std::ios::out | std::ios::app);
 
+	for (int p = 0; p <= pegs.size(); p++)
+	{
+		saved_games << pegs[p];
+	}
+
+	saved_games.close();
 }
 
 /*
@@ -31,7 +38,7 @@ Create unique ptr of TicTacToe boards
 
 		   if vector peg size 9
 			   create board of TicTacToe3 using make_unique
-		  else
+		   else
 			   create board of TicTacToe4 using make_unique
 
 			  add the board to the boards vector
@@ -43,6 +50,31 @@ Create unique ptr of TicTacToe boards
 vector<unique_ptr<TicTacToe>> TicTacToeData::get_games()
 {
 	vector<unique_ptr<TicTacToe>> games;
+
+	fstream file(file_name, std::ios::in);
+
+	vector<string> game;
+	string line;
+	while (file.is_open())
+	{
+		getline(file, line);
+		for (auto ch : line)
+		{
+			game.push_back(std::string(1 ,ch));	
+		}
+		std::unique_ptr<TicTacToe> game1;
+		if (line.size() == 9)
+		{
+			game1 = std::make_unique<TicTacToe3>();
+		}
+		else
+		{
+			game1 = std::make_unique<TicTacToe4>();
+		}
+		games.push_back(game1);
+	}
+	file.close();
+
 
 	return games;
 }
