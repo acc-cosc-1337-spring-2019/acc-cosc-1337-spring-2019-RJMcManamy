@@ -153,7 +153,7 @@ void Panel::on_start_button_click(wxCommandEvent & event)
 		pass 3,4, or if you have my solution the values GameType::three or GameType::four
 		as parameter arguments to the get_game function
 		*/
-		board = manager->get_game(3);
+		board = manager->get_game(GameType::three);
 		
 		tic_tac_toe_grid_4->Show(false);
 		tic_tac_toe_grid_3->Show(true);
@@ -168,7 +168,7 @@ void Panel::on_start_button_click(wxCommandEvent & event)
 		pass 3,4, or if you have my solution the values GameType::three or GameType::four
 		as parameter arguments to the get_game function
 		*/
-		board = manager->get_game(4);
+		board = manager->get_game(GameType::four);
 		
 		tic_tac_toe_grid_3->Show(false);
 		tic_tac_toe_grid_4->Show(true);

@@ -17,7 +17,7 @@ void TicTacToeData::save_game(const vector<string>& pegs)
 	{
 		saved_games << pegs[p];
 	}
-
+	saved_games << "\n";
 	saved_games.close();
 }
 
@@ -55,23 +55,22 @@ vector<unique_ptr<TicTacToe>> TicTacToeData::get_games()
 
 	vector<string> game;
 	string line;
-	while (file.is_open())
+	while (getline(file, line))
 	{
-		getline(file, line);
 		for (auto ch : line)
 		{
 			game.push_back(std::string(1 ,ch));	
 		}
-		//std::unique_ptr<TicTacToe> game1;
+		std::unique_ptr<TicTacToe> game1;
 		if (line.size() == 9)
 		{
-			//game1 = std::make_unique<TicTacToe3>();
+			game1 = std::make_unique<TicTacToe3>(game);
 		}
 		else
 		{
-			//game1 = std::make_unique<TicTacToe4>();
+			game1 = std::make_unique<TicTacToe4>(game);
 		}
-		//games.push_back(game1);
+		games.push_back(std::move(game1));
 	}
 	file.close();
 

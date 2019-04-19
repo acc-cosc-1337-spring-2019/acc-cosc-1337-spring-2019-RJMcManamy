@@ -14,7 +14,8 @@ public:
 	1. Write a constructor with vector of string p and use an initializer
 	   to initialize the TicTacToe object with p.
 	*/
-	TicTacToe4(std::vector<string> p) : TicTacToe(GameType::four) {}
+	TicTacToe4(std::vector<string> p) : TicTacToe(p) {  }
+
 private:
 	bool check_column_win();
 	bool check_row_win();

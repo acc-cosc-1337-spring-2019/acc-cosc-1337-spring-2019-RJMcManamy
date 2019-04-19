@@ -20,7 +20,7 @@ public:
 	   and write code to initialize the  vector of string pegs with s.
 	2. In the constructor, call the determine_winner function
 	*/
-	TicTacToe(std::vector<std::string> s) : pegs(s) {  }
+	TicTacToe(std::vector<std::string> s) : pegs(s) { determine_winner(); }
 	void start_game(std::string first_player);
 	std::string get_player() const;
 	bool game_over();

@@ -10,7 +10,8 @@ Call the set_scores function.
 */
 TicTacToeManager::TicTacToeManager()
 {
-	
+	games = data.get_games();
+	set_scores();
 }
 
 /*
@@ -64,7 +65,21 @@ and add 1 to x_win, o_win or ties.
 */
 void TicTacToeManager::set_scores()
 {
-	
+	for (auto& g : games)
+	{
+		if (g->get_winner() == "X")
+		{
+			x_win++;
+		}
+		else if (g->get_winner() == "O")
+		{
+			o_win++;
+		}
+		else
+		{
+			ties++;
+		}
+	}
 }
 
 void TicTacToeManager::get_winner_totals(int& x, int& o, int& c) 
