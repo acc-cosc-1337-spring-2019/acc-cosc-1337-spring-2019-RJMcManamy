@@ -1,4 +1,4 @@
-#include "destructor"
+#include "destructor.h"
 
 int main() 
 {
